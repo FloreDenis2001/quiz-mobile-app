@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="@string/subHeader"
         android:textAlignment="center"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.561"
@@ -26,7 +26,7 @@
         android:id="@+id/flore_denis_txtLogindHeader"
         style="@style/TextAppearance.AppCompat.Headline"
         android:layout_width="wrap_content"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:fontFamily="sans-serif-black"
         android:layout_height="wrap_content"
         android:text="@string/txtHeader"
@@ -37,8 +37,8 @@
 
     <ImageView
         android:id="@+id/avatarImage"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_marginBottom="20dp"
         android:src="@drawable/undraw_questions_re_1fy7__1_"
         app:layout_constraintBottom_toTopOf="@+id/flore_denis_txtLogindHeader"
@@ -46,10 +46,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnGetStarted"
+        android:id="@+id/flore_denis_buttonGetStart"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginTop="69dp"
         android:text="@string/getStarted"
         app:layout_constraintEnd_toEndOf="@+id/flore_denis_txtLoginSubHeader"

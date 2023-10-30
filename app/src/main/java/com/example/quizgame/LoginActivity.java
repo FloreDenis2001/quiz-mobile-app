@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,40 +23,52 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email;
     private EditText password;
 
+    private TextView singUp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         logIn = findViewById(R.id.flore_denis_loginButton);
-        logIn.setOnClickListener(v -> login());
+        singUp = findViewById(R.id.flore_denis_txtSignUp);
+        singUp.setOnClickListener(singUp());
+        logIn.setOnClickListener(login());
         firebaseAuth = FirebaseAuth.getInstance();
     }
 
+    public View.OnClickListener singUp() {
+        return view -> {
+            Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+            startActivity(intent);
+        };
+    }
+
     public View.OnClickListener login() {
+        return view -> {
+            email = findViewById(R.id.flore_denis_emailInput);
+            password = findViewById(R.id.flore_denis_passwordInput);
 
-        email = findViewById(R.id.flore_denis_emailInput);
-        password = findViewById(R.id.flore_denis_passwordInput);
 
+            if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
+                Toast.makeText(this, "Email / Password cannot be empty !", Toast.LENGTH_SHORT).show();
+            } else {
 
-        if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
-            Toast.makeText(this, "Email / Password cannot be empty !", Toast.LENGTH_SHORT).show();
-        } else {
+                firebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
-            firebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Error login", Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Error login", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                }
-            });
-        }
-        return null;
+                });
+            }
+        };
     }
 
 
