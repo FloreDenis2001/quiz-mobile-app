@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">QuizGame</string>
+    <string name="subHeader">Test Your Knowledge on \n Football Teams Around the World</string>
+    <string name="txtHeader">Welcome to Football Quiz</string>
+    <string name="getStarted">Get Started</string>
+    <string name="loginTitle">Login</string>
+    <string name="enter_your_email_and_password">Please enter your email and password to continue using app</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">LOG IN</string>
+    <string name="signup">Don\'t have an account ? SignUp</string>
+    <string name="stay_connected">Stay Connected</string>
+    <string name="signuptxt">Please enter your email address and password to get access to your account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="background">background image</string>
+</resources>

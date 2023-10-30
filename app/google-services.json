@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "615466236021",
+    "project_id": "quizz-dam",
+    "storage_bucket": "quizz-dam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615466236021:android:66eac8c79c73ec3d37603c",
+        "android_client_info": {
+          "package_name": "com.example.quizgame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn35aVgDgyVxlhE7xHZGRRqhpMud8S0-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
